@@ -1,7 +1,7 @@
 // IMPORT PACKAGES
 // Here you should import the required packages for your Express app: `express` and `morgan`
-const express = requires('express');
-const morgan = requires('morgan')
+const express = require('express');
+const morgan = require('morgan')
 
 // CREATE EXPRESS APP
 // Here you should create your Express app:
@@ -12,7 +12,7 @@ const app = express()
 // Here you should set up the required middleware:
 
 // - `express.static()` to serve static files from the `public` folder
-app.use(express.staic("public"));
+app.use(express.static("public"));
 
 // - `express.json()` to parse incoming requests with JSON payloads
 app.use(express.json()); // Ayuda a entender datos JSON enviados por el cliente.
