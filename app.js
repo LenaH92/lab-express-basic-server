@@ -24,6 +24,18 @@ app.use(morgan("dev")); //Muestra en consola quién visitó tu servidor y qué h
 // ROUTES
 // Start defining your routes here:
 
+/* home route */
+app.get('/', (request, response) => {
+    console.log(request)
+    response.sendFile(__dirname + "/views/home.html")
+})
+
+/* blog route */
+
+app.get('/blog', (request, response) => {
+    console.log(request)
+    response.sendFile(__dirname + "/views/blog.html")
+})
 
 
 // START THE SERVER
