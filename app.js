@@ -43,8 +43,28 @@ const projects = require('./data/projects.json');
 //creating the route
 
 app.get('/api/projects', (request, response) => {
-    response.json(projects);
+    response.json(projects); //needs to be json!
 })
+
+
+/* articles route */
+
+//importing the json file?
+const articles = require('./data/articles.json');
+
+//creating the route
+
+app.get('/api/articles', (request, response) => {
+    response.json(articles); //needs to be json!
+});
+
+/* 404 route */
+
+app.get('*', (req, res) => {
+    res.status(404).sendFile(__dirname + '/views/not-found.html')
+})
+
+
 
 // START THE SERVER
 // Make your Express server listen on port 5005:
