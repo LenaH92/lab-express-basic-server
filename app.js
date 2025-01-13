@@ -26,17 +26,25 @@ app.use(morgan("dev")); //Muestra en consola quién visitó tu servidor y qué h
 
 /* home route */
 app.get('/', (request, response) => {
-    console.log(request)
     response.sendFile(__dirname + "/views/home.html")
 })
 
 /* blog route */
 
 app.get('/blog', (request, response) => {
-    console.log(request)
     response.sendFile(__dirname + "/views/blog.html")
 })
 
+/* projects route */
+
+//importing the json file?
+const projects = require('./data/projects.json');
+
+//creating the route
+
+app.get('/api/projects', (request, response) => {
+    response.json(projects);
+})
 
 // START THE SERVER
 // Make your Express server listen on port 5005:
